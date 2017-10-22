@@ -36,10 +36,10 @@ app.post('/', function (req, res) {
 // generic function sending messages
 function sendMessage(replyToken, text) {
     let body = {
-        replyToken,
+        replyToken, // == replyToken: replyToken
         messages: [{
             type: 'text',
-            text,
+            text,  // == text: text
         }],
     };
 
