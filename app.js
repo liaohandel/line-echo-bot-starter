@@ -14,8 +14,23 @@ app.listen(PORT, function () {
 
 // handler receiving messages
 app.post('/', function (req, res) {
-    console.log(req.body)
-    res.status(200)
+    console.log('hello test x1 ')
+    console.log(JSON.stringify(req.body,null,2))
+    let events = req.body.events
+
+    events.forEach((event) => {
+        let replyToken =  event.replyToken
+        let type = event.message.type
+        if(type === 'text' ){
+            let text = event.message.text
+            sendMessage(replyToken,text)
+        } else {
+            sendMessage(replyToken, type)
+        }  
+    });
+
+    let replyToken = 
+    res.send()
 })
 
 // generic function sending messages
