@@ -14,6 +14,8 @@ app.listen(PORT, function () {
 
 // handler receiving messages
 app.post('/', function (req, res) {
+    console.log(req.body)
+    res.status(200)
 })
 
 // generic function sending messages
